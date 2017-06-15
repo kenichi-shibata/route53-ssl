@@ -1,0 +1,10 @@
+private_key.pem
+private_key.json
+domains.txt
+config
+!credentials/.aws/config
+hook.sh
+certs/*
+archive/*
+accounts/*
+.gencert

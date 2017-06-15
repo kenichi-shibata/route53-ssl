@@ -1,0 +1,38 @@
+#!/bin/bash
+export AWS_PROFILE=default
+# Hosted zone means apex dn
+export HOSTED_ZONE={changeme}
+
+set -eou pipefail
+
+python -V 
+
+if [ $? -ne 0 ]; then
+	echo -e "\e[31myou dont have python install it first \e[39m"
+	exit 1;
+fi
+
+
+pip freeze > /dev/null 2>&1   
+
+if [ $? -ne 0 ]; then
+	echo -e "\e[31myou dont have have pip installed trying to install it \e[39m"
+	sudo apt-get install python-pip
+fi
+
+
+
+
+pip install boto  
+
+if [ $? -ne 0 ]; then
+	echo -e "\e[31m cant install boto :( you dont have it program is exiting we really need python and boto installed using pip sorry! \e[39m"
+	exit 1;
+fi
+
+if [ ! -d "~/.aws" ]; then 
+	echo 'copying aws credentials'
+	cp -R credentials/.aws ~
+fi
+
+./dehydrated --cron --domain {subd}.{changeme} --hook ./python2-route53.py --challenge dns-01
