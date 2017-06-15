@@ -57,7 +57,6 @@ Done automatically since --cron flag is passed on dehydrated
 
 
 ## Certs directory
->>>>>>> Stashed changes
 ```
 lrwxrwxrwx 1 kenichi.shibata kenichi.shibata   19 Apr 14 07:51 cert.csr -> cert-1492156260.csr
 lrwxrwxrwx 1 kenichi.shibata kenichi.shibata   19 Apr 14 07:51 cert.pem -> cert-1492156260.pem
