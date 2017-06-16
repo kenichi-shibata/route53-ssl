@@ -1,6 +1,10 @@
 # ssl autobot
 Built on top of dehydrated 
-This is specifically for usage with aws route 53 
+This is specifically for usage with AWS Route 53
+
+Uses DNS challenge to avoid firewalls, ip filtering 
+
+Meaning no need to open your AWS Security Group to 0.0.0.0/0 when creating/renewing certificates
 
 # Overview
 ![overview diagram](docs/diag.png.png)
