@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Creates let's encrypt user on this machine
+./dehydrated --register --accept-terms
+
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
