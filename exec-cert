@@ -1,5 +1,5 @@
 #!/bin/bash
-export AWS_PROFILE=default
+export AWS_PROFILE=route53
 # Hosted zone means apex dn
 export HOSTED_ZONE={changeme}
 
