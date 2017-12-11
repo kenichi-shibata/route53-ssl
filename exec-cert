@@ -30,7 +30,7 @@ if [ $? -ne 0 ]; then
 	exit 1;
 fi
 
-if [ ! -d "~/.aws" ]; then 
+if [ -d "~/.aws" ]; then 
 	echo 'copying aws credentials'
 	cp -R credentials/.aws ~
 fi
