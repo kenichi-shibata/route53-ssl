@@ -15,7 +15,7 @@ Meaning no need to open your AWS Security Group to 0.0.0.0/0 when creating/renew
 * boto 
 * pip
 * awscli
-* aws profile named route53 with full access to route53 
+* aws profile named route53 with full access to route53 (or at least read write access to the domain you want to add)
 * aws route 53 public hosted zone
 * unix based server
 
@@ -26,19 +26,20 @@ Meaning no need to open your AWS Security Group to 0.0.0.0/0 when creating/renew
 * install boto 
 
 ## Run 
-```
-	#update the credentials/.aws dir add your config and credenials
- 	
-	#accept the license agreement
 
-         ./dehydrated --register --accept-terms
+* supply the aws credentials either on ~/.aws dir or inside this repo under credentials/.aws
 
-     	./start.sh #answer the questions
+* accept the license agreement
 
-	# the certificate will be on the certs/{domain} directory
+	 ./dehydrated --register --accept-terms
+
+* answer the questions regarding the domain you want to register
+
+	./start.sh #answer the questions
+
+* the certificate will be on the certs/{domain} directory
 
 	
-```
 
 ## Usage 
 ### Apache 
@@ -57,8 +58,9 @@ server {
 }
 ```
 ## Renew Certs
-Done automatically since --cron flag is passed on dehydrated
 
+	crontab -e 
+	0 1 * * * /certs/certs/.gencert >> /var/log/cronlog 2>&1 
 
 ## Certs directory
 ```
