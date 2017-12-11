@@ -38,7 +38,7 @@ Meaning no need to open your AWS Security Group to 0.0.0.0/0 when creating/renew
 	./start.sh #answer the questions
 
 * the certificate will be on the certs/{domain} directory
-
+* The executable file that generates the certificates is .gencert you can rerun it without answering questions on .start again
 	
 
 ## Usage 
